@@ -49,7 +49,7 @@ describe('Notes JSON api', function() {
   });
 
   it('can successfully delete a note', function(done) {
-    superagent.del('http://localhost:3000/api/v1/note/' + id)
+    superagent.del(resourceUrl + '/' + id)
     .end(function(err, res) {
       expect(err).to.eql(null);
 
