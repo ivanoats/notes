@@ -11,7 +11,7 @@ module.exports = function(grunt) {
       options: {
         jshintrc: true
       },
-      all: ['Gruntfile.js', 'server.js', 'test/api/*.js']
+      all: ['Gruntfile.js', 'server.js', 'test/api/*.js','app/js/**/*.js']
     },
     simplemocha: {
       options: {
@@ -23,7 +23,7 @@ module.exports = function(grunt) {
     copy: {
       all: {
         expand: true,
-        cwd: 'public/',
+        cwd: 'app/',
         src: ['*.css', '*.html', '/images/**/*', '!Gruntfile.js'],
         dest: 'dist/',
         flatten: true,
@@ -32,8 +32,8 @@ module.exports = function(grunt) {
     },
     browserify: {
       all: {
-        src: 'src/*.js',
-        dest: 'dist/app.js'
+        src: 'app/js/**/*.js',
+        dest: 'dist/client.js'
       },
       options: {
         transform: ['debowerify'],
@@ -75,11 +75,11 @@ module.exports = function(grunt) {
     },
     watch: {
       scripts: {
-        files: ['src/*.js','public/**','test/**/*.js']
+        files: ['app/js/**/*.js','test/**/*.js']
       },
       express: {
           files: ['server.js'],
-          tasks: ['express:dev'],
+          tasks: ['browserify'],
           options: {
             spawn: false
           }
@@ -88,7 +88,7 @@ module.exports = function(grunt) {
 
   });
 
-  grunt.registerTask('server', [ 'express:dev','watch' ]);
+  grunt.registerTask('server', [ 'build', 'express:dev','watch' ]);
   grunt.registerTask('test:acceptance',['express:dev','casper']);
   grunt.registerTask('test:api','simplemocha');
   grunt.registerTask('test',['test:acceptance','test:api']);
