@@ -13,5 +13,6 @@ mongoose.connect('mongodb://localhost/notes-development');
 app.set('port', process.env.PORT || 3000);
 var server = http.createServer(app);
 server.listen(app.get('port'), function(){
-  console.log('server listening on port' + app.get('port'));
+  console.log('server listening on port ' + app.get('port'));
 });
+

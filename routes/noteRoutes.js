@@ -1,3 +1,4 @@
+'use strict';
 var Note = require('../models/Note');
 
 module.exports.collection = function(req, res){
