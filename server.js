@@ -7,8 +7,8 @@ var bodyparser = require('body-parser');
 var noteRoutes = require('./routes/noteRoutes');
 
 var app = express();
-
-app.use(bodyparser());
+app.use(bodyparser.json());
+app.use(express.static( __dirname + '/dist'));
 app.set('port', process.env.PORT || 3000);
 
 app.get('/api/v1/notes', noteRoutes.collection);
