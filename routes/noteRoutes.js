@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 var Note = require('../models/Note');
 
 exports.collection = function(req, res) {
@@ -14,7 +14,7 @@ exports.collection = function(req, res) {
 
 exports.findById = function(req, res) {
   res.setHeader('Content-Type', 'application/json');
-  Note.findOne({"_id" : req.params.id}, function(err, note) {
+  Note.findOne({'_id' : req.params.id}, function(err, note) {
     if(err) {
       res.send(500, {error: err});
       return false;
@@ -25,20 +25,20 @@ exports.findById = function(req, res) {
 
 exports.create = function(req, res) {
   res.setHeader('Content-Type', 'application/json');
-  var note = new Note({body: req.body.body});
-  note.save(function(err, resUser) {
+  var note = new Note({noteBody: req.body.noteBody});
+  note.save(function(err, resNote) {
     if(err) {
       res.send(500, {error: err});
       return false;
     }
-    res.send(resUser);
+    res.send(resNote);
   });
 };
 
 exports.update = function(req, res) {
   res.setHeader('Content-Type', 'application/json');
   var id = req.params.id;
-  delete req.body._id
+  delete req.body._id;
 
   Note.findOneAndUpdate({'_id' : id}, req.body, function(err, note) {
     if (err) {
@@ -56,7 +56,6 @@ exports.destroy = function(req, res) {
       res.send(500, {error: err});
       return false;
     }
-    res.send({"message" : "success!"});
+    res.send({'message' : 'success!'});
   });
 };
-

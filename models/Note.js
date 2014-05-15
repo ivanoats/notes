@@ -2,7 +2,7 @@
 
 var mongoose = require('mongoose');
 var noteSchema = mongoose.Schema({
-  body: String
+  noteBody: String
 });
 
 module.exports = mongoose.model('Note', noteSchema);
