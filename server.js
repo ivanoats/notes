@@ -7,6 +7,7 @@ var noteRoutes = require('./routes/noteRoutes');
 var app = express();
 
 app.get('/api/v0_0_1/notes', noteRoutes.collection);
+app.get('/api/v0_0_1/notes/:id', noteRoutes.findById);
 
 mongoose.connect('mongodb://localhost/notes-development');
 
