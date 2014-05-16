@@ -84,11 +84,26 @@ module.exports = function(grunt) {
             spawn: false
           }
       }
-    }
+    },
+    shell: {
+      mongodb: {
+        command: 'mongod --dbpath ./db',
+        options: {
+          async: true,
+          stdout: false,
+          stderr: true,
+          failOnError: true,
+          execOptions: {
+            cwd: '.'
+          }
+        }
+      }
+    },
 
   });
 
-  grunt.registerTask('server', [ 'build', 'express:dev','watch' ]);
+  grunt.registerTask('serve', [ 'shell', 'build', 'express:dev','watch' ]);
+  grunt.registerTask('server', 'serve');
   grunt.registerTask('test:acceptance',['express:dev','casper']);
   grunt.registerTask('test:api','simplemocha');
   grunt.registerTask('test',['test:acceptance','test:api']);
