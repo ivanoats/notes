@@ -14,7 +14,7 @@ exports.collection = function(req, res) {
 
 exports.findById = function(req, res) {
   res.setHeader('Content-Type', 'application/json');
-  Note.findOne({'_id' : req.params.id}, function(err, note) {
+  Note.findOne({'_id': req.params.id}, function(err, note) {
     if(err) {
       res.send(500, {error: err});
       return false;
