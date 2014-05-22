@@ -2,6 +2,10 @@
   "name": "Notes",
   "description": "A note taking app",
   "version": "0.0.1",
+  "scripts": {
+    "test": "mocha test/api",
+    "start": "node server.js"
+  },
   "dependencies": {
     "body-parser": "^1.2.0",
     "express": "^4.0",
