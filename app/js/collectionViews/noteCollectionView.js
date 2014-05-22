@@ -6,7 +6,7 @@ var _ = require('underscore');
 
 module.exports = Backbone.View.extend({
   className: 'notes',
-//  el: 'section',
+  tagName: 'section',
   
   initialize: function() {
     this.collection.on('add', this.addNote, this);
