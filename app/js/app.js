@@ -13,7 +13,7 @@ $(function(){
   var noteCollectionView = new NoteCollectionView({collection: noteCollection});
   noteCollection.fetch({
     success: function() {
-      $('#notes').html(noteCollectionView.$el);
+      $('#notes').html(noteCollectionView.el);
     }
   });
 });
