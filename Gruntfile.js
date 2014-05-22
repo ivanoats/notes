@@ -11,7 +11,7 @@ module.exports = function(grunt) {
       options: {
         jshintrc: true
       },
-      all: ['Gruntfile.js', 'server.js', 'test/api/*.js','app/js/**/*.js']
+      all: ['Gruntfile.js', 'api/**/*.js','server.js', 'test/api/*.js','app/js/**/*.js']
     },
     simplemocha: {
       options: {
@@ -75,7 +75,7 @@ module.exports = function(grunt) {
     },
     watch: {
       scripts: {
-        files: ['app/js/**/*.js','test/**/*.js']
+        files: ['api/**/*.js','app/js/**/*.js','test/**/*.js']
       },
       express: {
           files: ['server.js'],

@@ -4,7 +4,7 @@ var express = require('express');
 var http = require('http');
 var mongoose = require('mongoose');
 var bodyparser = require('body-parser');
-var noteRoutes = require('./routes/noteRoutes');
+var noteRoutes = require('./api/routes/noteRoutes');
 
 var app = express();
 app.use(bodyparser.json());
