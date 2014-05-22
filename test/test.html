@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Notes (AMD) Tests</title>
+    <link rel="stylesheet" type="text/css" href="../node_modules/mocha/mocha.css">
+  </head>
+  <body>
+    <div id="mocha"><p><a href="test.html">Index</a></p></div>
+    <div id="messages"></div>
+    <div id="fixtures"></div>
+    <script src="../node_modules/mocha/mocha.js"></script>
+    <script src="../node_modules/chai/chai.js"></script>
+    <script src="../dist/client.js"></script>
+    <script>mocha.setup('bdd');</script>
+    <script>mocha.run();</script>
+
+    <!-- JavaScript Test Spec. -->
+    <script src="./browser/hello.spec.js"></script>
+  </body>
+</html>
