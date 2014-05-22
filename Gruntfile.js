@@ -36,7 +36,7 @@ module.exports = function(grunt) {
         dest: 'dist/client.js'
       },
       options: {
-        transform: ['debowerify'],
+        transform: ['debowerify', 'hbsfy'],
         debug: true
       }
     },
@@ -78,7 +78,7 @@ module.exports = function(grunt) {
         files: ['api/**/*.js','app/js/**/*.js','test/**/*.js']
       },
       express: {
-          files: ['server.js'],
+          files: ['server.js','app/js/**/*.js'],
           tasks: ['browserify'],
           options: {
             spawn: false
