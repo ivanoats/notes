@@ -1,5 +1,4 @@
 var $ = require('jquery');
-var Backbone = require('backbone');
 var _ = require('underscore');
 Backbone.$ = $;
 
@@ -8,7 +7,7 @@ var NoteView = require('./modelViews/note');
 var NoteCollection = require('./collections/noteCollection');
 var NoteCollectionView = require('./collectionViews/noteCollectionView');
 
-$(function(){ 
+$(function(){
   var noteCollection = new NoteCollection();
   var noteCollectionView = new NoteCollectionView({collection: noteCollection});
   noteCollection.fetch({
