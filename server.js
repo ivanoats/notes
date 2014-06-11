@@ -14,7 +14,11 @@ app.set('view engine', 'ractive');
 app.set('views', __dirname + '/views');
 
 app.use(bodyparser.json());
-app.use(express.static( __dirname + '/dist'));
+
+//static routes
+app.use(express.static( __dirname + '/dist' ));
+app.use(express.static( __dirname + '/views'));
+
 app.set('port', process.env.PORT || 3000);
 
 var noteModel = require('./api/models/Note');
@@ -22,7 +26,10 @@ app.get('/notes', function(req, res, next) {
   noteModel.find({}, function(err, results) {
     if (err) { return res.send(500, err.message); }
 
-    res.render('home', {
+    res.render('layout', {
+      partials: {
+        home: 'home'
+      },
       name: 'ivan',
       notes: results
     });

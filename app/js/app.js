@@ -1,18 +1,15 @@
-var $ = require('jquery');
-var _ = require('underscore');
-Backbone.$ = $;
+window.$ = require('jquery');
+window.Ractive = require('ractive');
 
-var Note = require('./models/note');
-var NoteView = require('./modelViews/note');
-var NoteCollection = require('./collections/noteCollection');
-var NoteCollectionView = require('./collectionViews/noteCollectionView');
-
-$(function(){
-  var noteCollection = new NoteCollection();
-  var noteCollectionView = new NoteCollectionView({collection: noteCollection});
-  noteCollection.fetch({
-    success: function() {
-      $('#notesWrapper').html(noteCollectionView.el);
-    }
-  });
+window.ractive = new Ractive({
+  el: "#container",
+  template: "#home",
+  data: {
+    name: "foo",
+    results: [
+      {noteBody: "note 1"},
+      {noteBody: "note 2"},
+      {noteBody: "note 3"}
+    ]
+  }
 });
