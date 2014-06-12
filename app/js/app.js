@@ -1,9 +1,9 @@
-window.$ = require('jquery');
-window.Ractive = require('ractive');
+var $ = require('jquery');
+var Ractive = require('ractive/ractive.runtime');
 
-window.ractive = new Ractive({
+var ractive = new Ractive({
   el: "#container",
-  template: "#home",
+  template: require('../../views/home.ractive').template,
   data: {
     name: "foo",
     results: [

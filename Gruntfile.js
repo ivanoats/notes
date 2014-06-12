@@ -36,7 +36,7 @@ module.exports = function(grunt) {
         dest: 'dist/client.js'
       },
       options: {
-        transform: ['debowerify', 'hbsfy'],
+        transform: ['debowerify', 'ractify' ],
         debug: true
       }
     },

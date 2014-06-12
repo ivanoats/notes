@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <title>Ractive Demo</title>
-  <script id="home" src="home.ractive"></script>
   <!-- <script id="home" type="text/ractive">Fooo</script> -->
 </head>
 <body>
