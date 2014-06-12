@@ -4,6 +4,7 @@ var Ractive = require('ractive/ractive.runtime');
 var ractive = new Ractive({
   el: "#container",
   template: require('../../views/home.ract').template,
+  // TODO get data via $.ajax request
   data: {
     name: "foo",
     notes: [
