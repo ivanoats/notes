@@ -6,7 +6,7 @@ var ractive = new Ractive({
   template: require('../../views/home.ract').template,
   data: {
     name: "foo",
-    results: [
+    notes: [
       {noteBody: "note 1"},
       {noteBody: "note 2"},
       {noteBody: "note 3"}
