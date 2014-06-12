@@ -9,8 +9,8 @@ var consolidate = require('consolidate');
 var noteRoutes = require('./api/routes/noteRoutes');
 
 var app = express();
-app.engine('ractive', consolidate.ractive);
-app.set('view engine', 'ractive');
+app.engine('ract', consolidate.ractive);
+app.set('view engine', 'ract');
 app.set('views', __dirname + '/views');
 
 app.use(bodyparser.json());

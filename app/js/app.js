@@ -3,7 +3,7 @@ var Ractive = require('ractive/ractive.runtime');
 
 var ractive = new Ractive({
   el: "#container",
-  template: require('../../views/home.ractive').template,
+  template: require('../../views/home.ract').template,
   data: {
     name: "foo",
     results: [
