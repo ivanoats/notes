@@ -33,8 +33,8 @@ app.get('/notes', function(req, res, next) {
       name: 'ivan',
       notes: results
     });
-    console.log('result length is' + results.length);
-    console.log('rendering ractive template');
+    console.log('result length is ' + results.length);
+    console.log('process.pid: '+ process.pid);
   });
 });
 
